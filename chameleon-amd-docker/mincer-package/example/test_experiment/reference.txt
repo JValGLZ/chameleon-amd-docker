@@ -1,0 +1,1 @@
+Matrix multiplication (size 256 x 256) completed in 0.031706 seconds.

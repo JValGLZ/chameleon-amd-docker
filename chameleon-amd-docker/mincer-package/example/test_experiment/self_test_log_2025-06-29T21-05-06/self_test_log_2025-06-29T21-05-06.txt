@@ -1,0 +1,27 @@
+Self-Test Log - 2025-06-29 21:05:06
+==================================================
+
+System Information:
+  os: Linux 5.4.0-216-generic
+  cpu: x86_64
+  ram_gb: 187.4
+
+Experiment Run Log:
+Compiling row-major version with PAPI...
+Compiling column-major version with PAPI...
+
+=== Running Row-Major Version ===
+Row-major matrix multiplication completed in 0.071025 seconds.
+
+=== Running Column-Major Version ===
+Column-major-like matrix multiplication completed in 0.064649 seconds.
+
+
+Output Comparison:
+  FAIL: Output differs from reference
+  Line 1: Expected 'Matrix multiplication (size 256 x 256) completed in 0.031706 seconds.', Got 'Compiling row-major version with PAPI...'
+  Line 2: Expected '', Got 'Compiling column-major version with PAPI...'
+  Line 4: Expected '', Got '=== Running Row-Major Version ==='
+  Line 5: Expected '', Got 'Row-major matrix multiplication completed in 0.071025 seconds.'
+  Line 7: Expected '', Got '=== Running Column-Major Version ==='
+  Line 8: Expected '', Got 'Column-major-like matrix multiplication completed in 0.064649 seconds.'

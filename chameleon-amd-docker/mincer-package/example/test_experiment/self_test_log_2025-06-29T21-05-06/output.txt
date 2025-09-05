@@ -1,0 +1,8 @@
+Compiling row-major version with PAPI...
+Compiling column-major version with PAPI...
+
+=== Running Row-Major Version ===
+Row-major matrix multiplication completed in 0.071025 seconds.
+
+=== Running Column-Major Version ===
+Column-major-like matrix multiplication completed in 0.064649 seconds.
