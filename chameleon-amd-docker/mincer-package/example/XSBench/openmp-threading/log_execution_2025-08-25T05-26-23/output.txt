@@ -1,0 +1,78 @@
+=== XSBench Energy and Performance Test ===
+Running XSBench with energy + performance monitoring...
+
+Running XSBench in Docker container...
+================================================================================
+                   __   __ ___________                 _                        
+                   \ \ / //  ___| ___ \               | |                       
+                    \ V / \ `--.| |_/ / ___ _ __   ___| |__                     
+                    /   \  `--. \ ___ \/ _ \ '_ \ / __| '_ \                    
+                   / /^\ \/\__/ / |_/ /  __/ | | | (__| | | |                   
+                   \/   \/\____/\____/ \___|_| |_|\___|_| |_|                   
+
+================================================================================
+                    Developed at Argonne National Laboratory
+                                   Version: 20
+================================================================================
+                                  INPUT SUMMARY
+================================================================================
+Simulation Method:            History Based
+Grid Type:                    Unionized Grid
+Materials:                    12
+H-M Benchmark Size:           large
+Total Nuclides:               355
+Gridpoints (per Nuclide):     11,303
+Unionized Energy Gridpoints:  4,012,565
+Particle Histories:           500,000
+XS Lookups per Particle:      34
+Total XS Lookups:             34
+Threads:                      96
+Est. Memory Usage (MB):       5,649
+Binary File Mode:             Off
+================================================================================
+                         INITIALIZATION - DO NOT PROFILE
+================================================================================
+Intializing nuclide grids...
+Intializing unionized grid...
+Intializing material data...
+Intialization complete. Allocated 5648 MB of data.
+
+================================================================================
+                                   SIMULATION
+================================================================================
+Energy + Performance monitoring initialized successfully
+Energy + Performance measurement started
+Beginning history based simulation...
+
+Simulation complete.
+Energy + Performance measurement stopped
+Note: Detected units = nJ (scaled to J)
+--------------------------------------------------------------------------------
+ENERGY MEASUREMENTS:
+Package Energy: 1126484410368 raw (1126.484 J)
+DRAM Energy:    154506756096 raw (154.507 J)
+Total Energy:   1280.991 J
+Average Package Power: 660.966 W
+Average DRAM Power:    90.657 W
+Average Total Power:   751.623 W
+--------------------------------------------------------------------------------
+PERFORMANCE COUNTERS:
+Total Cycles:       0
+Total Instructions: 0
+Frequency:          0.000 GHz
+IPS:                0.000 MIPS
+================================================================================
+================================================================================
+                                     RESULTS
+================================================================================
+Threads:     96
+Runtime:     1.704 seconds
+Lookups:     17,000,000
+Lookups/s:   9,974,770
+Verification checksum: 954318 (Valid)
+================================================================================
+Energy + Performance monitoring cleaned up
+
+=== Key Results ===
+Verification checksum: 954318 (Valid)
+=== XSBench Test Complete ===

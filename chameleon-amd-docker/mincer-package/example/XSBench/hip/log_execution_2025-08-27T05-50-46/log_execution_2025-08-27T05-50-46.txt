@@ -1,0 +1,32 @@
+Self-Test Log - 2025-08-27 05:50:46
+==================================================
+
+System Information:
+  os: Linux 5.15.0-151-generic
+  cpu: x86_64
+  ram_gb: 251.31
+
+Experiment Run Log:
+ERROR running experiment: Script failed with return code 127. Error details:
+STDOUT:
+
+STDERR:
+/bin/bash: mincer-package/example/XSBench/hip/run.sh: No such file or directory
+
+Return code: 127
+Traceback (most recent call last):
+  File "/home/cc/mincer-package/run_experiment.py", line 122, in main
+    run_log = run_script(args.path, args.script)
+  File "/home/cc/mincer-package/run_experiment.py", line 30, in run_script
+    raise RuntimeError(f"Script failed with return code {result.returncode}. Error details:\n{output}")
+RuntimeError: Script failed with return code 127. Error details:
+STDOUT:
+
+STDERR:
+/bin/bash: mincer-package/example/XSBench/hip/run.sh: No such file or directory
+
+Return code: 127
+
+
+Output Comparison:
+  PASS: Output matches reference

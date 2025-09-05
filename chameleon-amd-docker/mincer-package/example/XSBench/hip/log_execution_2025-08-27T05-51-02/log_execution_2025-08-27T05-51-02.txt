@@ -1,0 +1,98 @@
+Self-Test Log - 2025-08-27 05:51:12
+==================================================
+
+System Information:
+  os: Linux 5.15.0-151-generic
+  cpu: x86_64
+  ram_gb: 251.31
+
+Experiment Run Log:
+=== XSBench AMD GPU Energy and Performance Test ===
+Running XSBench with PAPI ROCm monitoring...
+
+Running XSBench in Docker container with AMD GPU support...
+rm -rf XSBench Main.o io.o Simulation.o GridInit.o XSutils.o Materials.o
+hipcc -std=c++14 -I/usr/local/include -O3 -c Main.cpp -o Main.o
+hipcc -std=c++14 -I/usr/local/include -O3 -c io.cpp -o io.o
+hipcc -std=c++14 -I/usr/local/include -O3 -c Simulation.cpp -o Simulation.o
+hipcc -std=c++14 -I/usr/local/include -O3 -c GridInit.cpp -o GridInit.o
+hipcc -std=c++14 -I/usr/local/include -O3 -c XSutils.cpp -o XSutils.o
+hipcc -std=c++14 -I/usr/local/include -O3 -c Materials.cpp -o Materials.o
+hipcc -std=c++14 -I/usr/local/include -O3 Main.o io.o Simulation.o GridInit.o XSutils.o Materials.o -o XSBench -lm -L/usr/local/lib -lpapi
+================================================================================
+                   __   __ ___________                 _                        
+                   \ \ / //  ___| ___ \               | |                       
+                    \ V / \ `--.| |_/ / ___ _ __   ___| |__                     
+                    /   \  `--. \ ___ \/ _ \ '_ \ / __| '_ \                    
+                   / /^\ \/\__/ / |_/ /  __/ | | | (__| | | |                   
+                   \/   \/\____/\____/ \___|_| |_|\___|_| |_|                   
+
+================================================================================
+                    Developed at Argonne National Laboratory
+                                   Version: 20
+================================================================================
+                                  INPUT SUMMARY
+================================================================================
+Programming Model:            HIP
+HIP Device:                   AMD Instinct MI100
+Simulation Method:            Event Based
+Grid Type:                    Unionized Grid
+Materials:                    12
+H-M Benchmark Size:           small
+Total Nuclides:               68
+Gridpoints (per Nuclide):     11,303
+Unionized Energy Gridpoints:  768,604
+Total XS Lookups:             17,000,000
+Est. Memory Usage (MB):       241
+Binary File Mode:             Off
+================================================================================
+                         INITIALIZATION - DO NOT PROFILE
+================================================================================
+Intializing nuclide grids...
+Intializing unionized grid...
+Intializing material data...
+Intialization complete. Allocated 240 MB of data on CPU.
+Allocating and moving simulation data to GPU memory space...
+GPU Intialization complete. Allocated 370 MB of data on GPU.
+PAPI library initialized successfully
+Added ROCm SMI GPU busy percent event
+Added ROCm SMI power monitoring event
+Added ROCm SMI temperature monitoring event
+Started PAPI monitoring with 3 events
+
+================================================================================
+                                   SIMULATION
+================================================================================
+Running baseline event-based simulation...
+Reducing verification results...
+
+Simulation complete.
+
+================================================================================
+                           PAPI GPU MONITORING RESULTS
+================================================================================
+GPU Busy Percent: 0%
+GPU Power Usage: 34 watts
+GPU Temperature: 28°C
+================================================================================
+================================================================================
+                                     RESULTS
+================================================================================
+NOTE: Timings are estimated -- use nvprof/nsys/iprof/rocprof for formal analysis
+Runtime:     0.144 seconds
+Lookups:     17,000,000
+Lookups/s:   118,437,308
+Verification checksum: 945990 (Valid)
+================================================================================
+
+=== Key Results ===
+Verification checksum: 945990 (Valid)
+Lookups/s:   118,437,308
+GPU Busy Percent: 0%
+GPU Power Usage: 34 watts
+GPU Temperature: 28°C
+=== XSBench AMD GPU Test Complete ===
+
+
+Output Comparison:
+  PASS: Output matches reference

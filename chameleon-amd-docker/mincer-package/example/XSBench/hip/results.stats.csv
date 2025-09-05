@@ -1,0 +1,3 @@
+"Name","Calls","TotalDurationNs","AverageNs","Percentage"
+"xs_lookup_kernel_baseline(Inputs, SimulationData) [clone .kd]",1,72393136,72393136,99.97922886498343
+"__amd_rocclr_copyBuffer.kd",3,15040,5013,0.02077113501657603
